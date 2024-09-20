@@ -34,20 +34,16 @@ This project is an admin panel that allows users to register, sign in, and manag
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/jencyy/Mongo_adminPanel.git
    
 2. Install dependencies:
   ```bash
-  npm install
+npm install
 ```
-3.Set up the environment variables:
+3. Set up the environment variables:
  **Create a .env file and add the following**:
-  makefile
-  
-  MONGO_URI=your-mongodb-uri
-  PORT=your-port-number
-  SESSION_SECRET=your-session-secret
-  
+   PORT=3600
+   
 4.Start the server:
 ```bash
 npm start
