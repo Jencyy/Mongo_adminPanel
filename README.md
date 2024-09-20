@@ -40,11 +40,13 @@ This project is an admin panel that allows users to register, sign in, and manag
   ```bash
 npm install
 ```
+
 3. Set up the environment variables:
  **Create a .env file and add the following**:
+   
    PORT=3600
    
-4.Start the server:
+5. Start the server:
 ```bash
 npm start
 ```
