@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Panel - Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css"> <!-- Your custom styles -->
+    <style>
+        /* Style for Login Page */
+        body {
+            background: linear-gradient(to right, #00c6ff, #0072ff); /* Light to dark blue gradient */
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Navbar Style */
+        #navbar {
+            background-color: #343a40;
+            color: white;
+            padding: 0.5rem 1rem;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        #navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-control {
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: block;
+            margin-top: 1rem;
+            text-align: center;
+            color: #007bff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="d-flex justify-content-between align-items-center">
+        <div class="d-flex">   
+            <a href="/">Home</a>  
+            <a href="/profile">Profile</a>
+            <a href="/loginForm">Login</a>
+        </div>
+    </nav>
+    
+    <!-- Main content container to center the login form -->
+    <div class="main-content">
+        <div class="login-container">
+            <h2 class="text-center">Login</h2>
+            <form action="/logIn" method="POST">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <a href="/signupform">Don't have an account? Sign up</a>
+        </div>
+    </div>
+
+    <%- include('footer') %> <!-- Dynamic footer inclusion -->
+</body>
+</html>

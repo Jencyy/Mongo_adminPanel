@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Panel - Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar" class="bg-dark text-white p-3">
+            <h4 class="text-center">Admin Panel</h4>
+            <a class="d-block text-white py-2" href="/">Dashboard</a>
+            <a class="d-block text-white py-2" href="#users">Users</a>
+            <a class="d-block text-white py-2" href="/profile">Profile</a>
+            <a class="d-block text-white py-2" href="#settings">Settings</a>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="w-100">
+            <!-- Navbar -->
+            <div id="navbar" class="navbar navbar-dark bg-dark d-flex justify-content-between align-items-center p-3">
+                <h2 class="text-white">Dashboard</h2>
+                <a class="btn btn-outline-light" href="/loginForm">Log In</a>
+            </div>
+
+            <!-- Welcome Section -->
+            <div class="container-fluid mt-4">
+                <div class="alert alert-info">
+                    <h4>Welcome, <%= data[0].name %>!</h4>
+                    <p>Here's a quick summary of your dashboard.</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="dashboard-card text-center py-4 mb-4">
+                            <h3>Total Users</h3>
+                            <p>150</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card  text-center py-4 mb-4">
+                            <h3>Total Sales</h3>
+                            <p>$45,000</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card text-center py-4 mb-4">
+                            <h3>Active Sessions</h3>
+                            <p>45</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="charts-admin">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="charts-admin">
+                            <canvas id="userChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Small Chart -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="charts-admin">
+                            <canvas id="sessionsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="charts-admin">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Section -->
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <h3>Recent User Activity</h3>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>User Name</th>
+                                    <th>Email</th>
+                                    <th>Activity</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>John Doe</td>
+                                    <td>john@example.com</td>
+                                    <td>Logged in</td>
+                                    <td>2024-09-13</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Jane Smith</td>
+                                    <td>jane@example.com</td>
+                                    <td>Updated Profile</td>
+                                    <td>2024-09-12</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <%- include('footer') %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
